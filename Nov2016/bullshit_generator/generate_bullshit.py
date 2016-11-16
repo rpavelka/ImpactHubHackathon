@@ -3,13 +3,23 @@
 
 
 def filter_out_sentences(raw_korpus: str):
+    """
+    This should take some crazy string and filter out only complete sentences
+    consisting of only words, commas and dots, exclamation marks and question
+    marks. Beginning of sentence is capitalized. Return type is string.
+
+    Something like:
+    >>> filter_out_sentences("Banik #$%^ pico!!!")
+    "Banik pico!"
+    """
+
     return raw_korpus
 
 
 def build_probabilities(korpus_fn: str, len_of_sequence):
     """
     Takes a filename, reads the content and prepares list of words to use
-    and probabilities of wrod sequences
+    and probabilities of word sequences.
     """
 
     with open(korpus_fn) as f:
