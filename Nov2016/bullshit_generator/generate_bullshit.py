@@ -3,7 +3,7 @@
 
 
 def filter_out_sentences(raw_korpus: str):
-    return ""
+    return raw_korpus
 
 
 def build_probabilities(korpus_fn: str, len_of_sequence):
@@ -11,14 +11,17 @@ def build_probabilities(korpus_fn: str, len_of_sequence):
     Takes a filename, reads the content and prepares list of words to use
     and probabilities of wrod sequences
     """
+
     with open(korpus_fn) as f:
         raw_korpus = f.read()
+
     korpus = filter_out_sentences(raw_korpus)
+
     return korpus.split(" "), dict()
 
 
 def generate_bullshit(words: list, probabilities: dict):
-    return ""
+    return " ".join(words)
 
 
 if __name__ == "__main__":
